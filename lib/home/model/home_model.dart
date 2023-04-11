@@ -19,6 +19,7 @@ class HomeModel extends INetworkModel<HomeModel> {
     email = json['email'];
   }
 
+  @override
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;

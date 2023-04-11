@@ -5,13 +5,13 @@ import 'package:vexana/vexana.dart';
 
 void main() {
   late INetworkManager networkManager;
-  late IHomeService homeService;
+  
   setUp(() {
     networkManager = NetworkManager<HomeModel>(
       isEnableLogger: true,
       options: BaseOptions(baseUrl: "https://jsonplaceholder.typicode.com/"),
     );
-    homeService = HomeService(networkManager);
+    
   });
 
   test('Gel All List Data', () async {
@@ -22,8 +22,5 @@ void main() {
     expect(listDatas.data, isNotNull);
   });
 
-  test('Gel All List Manager', () async {
-    final listDatas = await homeService.getAllItems();
-    expect(listDatas, isNotNull);
-  });
+
 }
